@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_size_size_chart_items",
+  "info": {
+    "displayName": "size chart item",
+    "icon": "alien"
+  },
+  "options": {},
+  "attributes": {
+    "size": {
+      "type": "enumeration",
+      "enum": [
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL"
+      ]
+    },
+    "chest": {
+      "type": "integer"
+    },
+    "length": {
+      "type": "integer"
+    }
+  },
+  "config": {}
+}

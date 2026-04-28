@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "galerias",
+  "info": {
+    "singularName": "galeria",
+    "pluralName": "galerias",
+    "displayName": "gallery"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "collection": {
+      "type": "string"
+    },
+    "year": {
+      "type": "integer"
+    },
+    "description": {
+      "type": "text"
+    },
+    "order": {
+      "type": "integer"
+    },
+    "fotos": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  }
+}
