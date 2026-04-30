@@ -552,6 +552,7 @@ export interface ApiGaleriaGaleria extends Struct.CollectionTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     description: Schema.Attribute.Text;
+    description_en: Schema.Attribute.String;
     fotos: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios',
       true

@@ -20,6 +20,9 @@
     "description": {
       "type": "text"
     },
+    "description_en": {
+      "type": "string"
+    },
     "order": {
       "type": "integer"
     },
