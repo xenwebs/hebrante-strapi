@@ -1,7 +1,6 @@
 import crypto from "crypto"
 
-// 🔑 SECRET KEY из Bold dashboard
-const BOLD_SECRET = "QoL3CUGNRj7VfyZ-PIZbSw"
+const BOLD_SECRET = "QoL3CUGNRj7VfyZ-PIZbSw"  // ← Твой Secret Key!
 
 export default {
   async generateSignature(ctx) {
@@ -10,19 +9,16 @@ export default {
 
       console.log("📝 Данные для хеша:", { orderId, amount, currency })
 
-      // ТОЧНЫЙ порядок как в документации Bold:
-      // {orderId}{amount}{currency}{secretKey}
       const dataToSign = `${orderId}${amount}${currency}${BOLD_SECRET}`
       
       console.log("🔐 Строка для хеша:", dataToSign)
 
-      // Генерируй SHA256 хеш
       const integritySignature = crypto
         .createHmac("sha256", BOLD_SECRET)
         .update(dataToSign)
         .digest("hex")
 
-      console.log("✅ Сгенерированный хеш:", integritySignature)
+      console.log("✅ Хеш:", integritySignature)
 
       ctx.body = {
         success: true,
