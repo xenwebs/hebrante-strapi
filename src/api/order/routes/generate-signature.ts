@@ -3,7 +3,7 @@ export default {
     {
       method: 'POST',
       path: '/orders/generate-signature',
-      handler: 'api::order.controllers.bold.generateSignature',
+      handler: 'order.generateSignature',
       config: {
         auth: false,
         policies: [],
