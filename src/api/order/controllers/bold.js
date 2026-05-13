@@ -1,6 +1,6 @@
 import crypto from "crypto"
 
-// 🔑 ТВОЙ SECRET KEY (получи из Bold dashboard!)
+// 🔑 SECRET KEY из Bold dashboard
 const BOLD_SECRET = "QoL3CUGNRj7VfyZ-PIZbSw"
 
 export default {
@@ -8,29 +8,25 @@ export default {
     try {
       const { orderId, amount, currency } = ctx.request.body
 
-      // Concatenate: {orderId}{amount}{currency}{secretKey}
-      const dataToSign = `${orderId}${amount}${currency}${BOLD_SECRET}`
+      console.log("📝 Данные для хеша:", { orderId, amount, currency })
 
-      // Generate SHA256 hash
+      // ТОЧНЫЙ порядок как в документации Bold:
+      // {orderId}{amount}{currency}{secretKey}
+      const dataToSign = `${orderId}${amount}${currency}${BOLD_SECRET}`
+      
+      console.log("🔐 Строка для хеша:", dataToSign)
+
+      // Генерируй SHA256 хеш
       const integritySignature = crypto
         .createHmac("sha256", BOLD_SECRET)
         .update(dataToSign)
         .digest("hex")
 
-      console.log("✅ Signature:", integritySignature)
+      console.log("✅ Сгенерированный хеш:", integritySignature)
 
       ctx.body = {
         success: true,
-        integritySignature: integritySignature,
-        buttonConfig: {
-          apiKey: "pk_test_YOUR_KEY",  // Public Key
-          orderId: orderId,
-          amount: amount.toString(),
-          currency: currency,
-          integritySignature: integritySignature,
-          redirectionUrl: `${ctx.request.origin}/pages/order-confirmation.html?order_id=${orderId}`,
-          description: `Pedido #${orderId}`
-        }
+        integritySignature: integritySignature
       }
 
     } catch (error) {
