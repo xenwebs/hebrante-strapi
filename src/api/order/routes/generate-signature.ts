@@ -1,6 +1,6 @@
 export default [
   {
-    method: 'post',
+    method: 'POST',
     path: '/orders/generate-bold-signature',
     handler: 'order.generateSignature',
     config: {
