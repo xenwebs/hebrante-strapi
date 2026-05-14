@@ -9,7 +9,7 @@ export default factories.createCoreRouter('api::order.order');
 export const routes = [
   {
     method: 'post',
-    path: '/orders/generate-signature',
+    path: '/api/orders/generate-bold-signature',
     handler: 'api::order.controllers.bold.generateSignature',
     config: {
       auth: false,
