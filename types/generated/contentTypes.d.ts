@@ -572,6 +572,37 @@ export interface ApiGaleriaGaleria extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiHistoryPageHistoryPage extends Struct.CollectionTypeSchema {
+  collectionName: 'history_pages';
+  info: {
+    displayName: 'history page';
+    pluralName: 'history-pages';
+    singularName: 'history-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::history-page.history-page'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    videos: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+  };
+}
+
 export interface ApiOrderOrder extends Struct.CollectionTypeSchema {
   collectionName: 'orders';
   info: {
@@ -1305,6 +1336,7 @@ declare module '@strapi/strapi' {
       'api::banner.banner': ApiBannerBanner;
       'api::collection.collection': ApiCollectionCollection;
       'api::galeria.galeria': ApiGaleriaGaleria;
+      'api::history-page.history-page': ApiHistoryPageHistoryPage;
       'api::order.order': ApiOrderOrder;
       'api::product.product': ApiProductProduct;
       'api::variant.variant': ApiVariantVariant;
