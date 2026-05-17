@@ -603,6 +603,34 @@ export interface ApiHistoryPageHistoryPage extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiNewsletterNewsletter extends Struct.CollectionTypeSchema {
+  collectionName: 'newsletters';
+  info: {
+    displayName: 'newsletter';
+    pluralName: 'newsletters';
+    singularName: 'newsletter';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    email: Schema.Attribute.Email;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::newsletter.newsletter'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiOrderOrder extends Struct.CollectionTypeSchema {
   collectionName: 'orders';
   info: {
@@ -1369,6 +1397,7 @@ declare module '@strapi/strapi' {
       'api::collection.collection': ApiCollectionCollection;
       'api::galeria.galeria': ApiGaleriaGaleria;
       'api::history-page.history-page': ApiHistoryPageHistoryPage;
+      'api::newsletter.newsletter': ApiNewsletterNewsletter;
       'api::order.order': ApiOrderOrder;
       'api::product.product': ApiProductProduct;
       'api::variant.variant': ApiVariantVariant;
