@@ -64,6 +64,9 @@
     },
     "paidAt": {
       "type": "datetime"
+    },
+    "paymentDetails": {
+      "type": "json"
     }
   }
 }

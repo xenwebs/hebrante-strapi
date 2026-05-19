@@ -656,6 +656,7 @@ export interface ApiOrderOrder extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     orderStatus: Schema.Attribute.String;
     paidAt: Schema.Attribute.DateTime;
+    paymentDetails: Schema.Attribute.JSON;
     paymentId: Schema.Attribute.String;
     paymentMethod: Schema.Attribute.String;
     phone: Schema.Attribute.String;
