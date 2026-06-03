@@ -185,6 +185,15 @@
         }
       },
       "default": false
+    },
+    "onesize": {
+      "type": "boolean",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "default": false
     }
   }
 }
