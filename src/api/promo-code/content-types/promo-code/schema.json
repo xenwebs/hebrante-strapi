@@ -1,0 +1,43 @@
+{
+  "kind": "collectionType",
+  "collectionName": "promo_codes",
+  "info": {
+    "singularName": "promo-code",
+    "pluralName": "promo-codes",
+    "displayName": "promo-code"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "code": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "discount_percent": {
+      "type": "integer",
+      "required": true,
+      "min": 0,
+      "max": 100
+    },
+    "is_active": {
+      "type": "boolean",
+      "required": true,
+      "default": true
+    },
+    "valid_from": {
+      "type": "date"
+    },
+    "valid_until": {
+      "type": "date"
+    },
+    "min_purchase_amount": {
+      "type": "integer"
+    },
+    "description": {
+      "type": "text"
+    }
+  }
+}
