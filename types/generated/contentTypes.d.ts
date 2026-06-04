@@ -657,6 +657,7 @@ export interface ApiOrderOrder extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    discount: Schema.Attribute.Integer;
     discountPercent: Schema.Attribute.Integer;
     email: Schema.Attribute.Email;
     firstName: Schema.Attribute.String;
