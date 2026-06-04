@@ -662,6 +662,7 @@ export interface ApiOrderOrder extends Struct.CollectionTypeSchema {
     email: Schema.Attribute.Email;
     firstName: Schema.Attribute.String;
     items: Schema.Attribute.JSON;
+    labelUrl: Schema.Attribute.String;
     lastName: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::order.order'> &
@@ -674,12 +675,14 @@ export interface ApiOrderOrder extends Struct.CollectionTypeSchema {
     phone: Schema.Attribute.String;
     promoCode: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
+    shippingCarrier: Schema.Attribute.String;
     shippingCost: Schema.Attribute.Integer;
     shippingMethod: Schema.Attribute.String;
     state: Schema.Attribute.String;
     street: Schema.Attribute.String;
     subtotal: Schema.Attribute.Integer;
     total: Schema.Attribute.Integer;
+    trackingNumber: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

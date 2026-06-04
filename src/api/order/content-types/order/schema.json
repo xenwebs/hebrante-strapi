@@ -76,6 +76,15 @@
     },
     "discount": {
       "type": "integer"
+    },
+    "trackingNumber": {
+      "type": "string"
+    },
+    "labelUrl": {
+      "type": "string"
+    },
+    "shippingCarrier": {
+      "type": "string"
     }
   }
 }
