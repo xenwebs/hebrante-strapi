@@ -657,6 +657,7 @@ export interface ApiOrderOrder extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    discountPercent: Schema.Attribute.Integer;
     email: Schema.Attribute.Email;
     firstName: Schema.Attribute.String;
     items: Schema.Attribute.JSON;
@@ -670,6 +671,7 @@ export interface ApiOrderOrder extends Struct.CollectionTypeSchema {
     paymentId: Schema.Attribute.String;
     paymentMethod: Schema.Attribute.String;
     phone: Schema.Attribute.String;
+    promoCode: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     shippingCost: Schema.Attribute.Integer;
     shippingMethod: Schema.Attribute.String;

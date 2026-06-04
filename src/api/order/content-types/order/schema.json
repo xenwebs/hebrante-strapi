@@ -67,6 +67,12 @@
     },
     "paymentDetails": {
       "type": "json"
+    },
+    "promoCode": {
+      "type": "string"
+    },
+    "discountPercent": {
+      "type": "integer"
     }
   }
 }
