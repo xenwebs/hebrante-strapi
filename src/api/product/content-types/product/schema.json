@@ -99,6 +99,14 @@
         }
       }
     },
+    "materials_en": {
+      "type": "richtext",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
     "feature1": {
       "type": "string",
       "pluginOptions": {
