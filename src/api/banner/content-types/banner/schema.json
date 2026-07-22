@@ -44,6 +44,14 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::collection.collection"
+    },
+    "image_mobile": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
     }
   }
 }
