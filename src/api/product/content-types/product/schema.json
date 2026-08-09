@@ -213,6 +213,12 @@
         }
       },
       "default": false
+    },
+    "promo_codes": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::promo-code.promo-code",
+      "inversedBy": "products"
     }
   }
 }

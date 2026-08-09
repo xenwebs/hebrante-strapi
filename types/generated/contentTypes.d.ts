@@ -825,6 +825,10 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
           localized: true;
         };
       }>;
+    promo_codes: Schema.Attribute.Relation<
+      'manyToMany',
+      'api::promo-code.promo-code'
+    >;
     publishedAt: Schema.Attribute.DateTime;
     sizesData: Schema.Attribute.JSON &
       Schema.Attribute.SetPluginOptions<{
@@ -940,6 +944,7 @@ export interface ApiPromoCodePromoCode extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     min_purchase_amount: Schema.Attribute.Integer;
+    products: Schema.Attribute.Relation<'manyToMany', 'api::product.product'>;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
