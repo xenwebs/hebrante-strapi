@@ -218,7 +218,7 @@
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::promo-code.promo-code",
-      "inversedBy": "products"
+      "inversedBy": "applicable_products"
     }
   }
 }

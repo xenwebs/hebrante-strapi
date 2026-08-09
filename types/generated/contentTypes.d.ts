@@ -918,6 +918,10 @@ export interface ApiPromoCodePromoCode extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    applicable_products: Schema.Attribute.Relation<
+      'manyToMany',
+      'api::product.product'
+    >;
     code: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.Unique;
@@ -944,7 +948,6 @@ export interface ApiPromoCodePromoCode extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     min_purchase_amount: Schema.Attribute.Integer;
-    products: Schema.Attribute.Relation<'manyToMany', 'api::product.product'>;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &

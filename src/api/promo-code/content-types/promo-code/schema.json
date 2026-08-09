@@ -39,7 +39,7 @@
     "description": {
       "type": "text"
     },
-    "products": {
+    "applicable_products": {
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::product.product",
