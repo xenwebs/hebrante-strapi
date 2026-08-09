@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "promo_bars",
+  "info": {
+    "singularName": "promo-bar",
+    "pluralName": "promo-bars",
+    "displayName": "promo-bar"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "text": {
+      "type": "string",
+      "required": true
+    },
+    "text_en": {
+      "type": "string"
+    },
+    "background_color": {
+      "type": "string"
+    },
+    "opacity": {
+      "type": "decimal",
+      "min": 0,
+      "max": 1
+    },
+    "light_text": {
+      "type": "boolean"
+    },
+    "is_active": {
+      "type": "boolean",
+      "default": true
+    }
+  }
+}

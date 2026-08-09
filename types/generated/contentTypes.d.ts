@@ -863,6 +863,46 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiPromoBarPromoBar extends Struct.CollectionTypeSchema {
+  collectionName: 'promo_bars';
+  info: {
+    displayName: 'promo-bar';
+    pluralName: 'promo-bars';
+    singularName: 'promo-bar';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    background_color: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    is_active: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<true>;
+    light_text: Schema.Attribute.Boolean;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::promo-bar.promo-bar'
+    > &
+      Schema.Attribute.Private;
+    opacity: Schema.Attribute.Decimal &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 1;
+          min: 0;
+        },
+        number
+      >;
+    publishedAt: Schema.Attribute.DateTime;
+    text: Schema.Attribute.String & Schema.Attribute.Required;
+    text_en: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiPromoCodePromoCode extends Struct.CollectionTypeSchema {
   collectionName: 'promo_codes';
   info: {
@@ -1521,6 +1561,7 @@ declare module '@strapi/strapi' {
       'api::newsletter.newsletter': ApiNewsletterNewsletter;
       'api::order.order': ApiOrderOrder;
       'api::product.product': ApiProductProduct;
+      'api::promo-bar.promo-bar': ApiPromoBarPromoBar;
       'api::promo-code.promo-code': ApiPromoCodePromoCode;
       'api::shipping-policy.shipping-policy': ApiShippingPolicyShippingPolicy;
       'api::variant.variant': ApiVariantVariant;
