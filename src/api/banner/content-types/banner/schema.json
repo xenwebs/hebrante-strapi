@@ -52,6 +52,12 @@
         "images",
         "files"
       ]
+    },
+    "products": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::product.product",
+      "inversedBy": "banners"
     }
   }
 }

@@ -495,6 +495,7 @@ export interface ApiBannerBanner extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     order: Schema.Attribute.Integer;
+    products: Schema.Attribute.Relation<'manyToMany', 'api::product.product'>;
     publishedAt: Schema.Attribute.DateTime;
     slug: Schema.Attribute.String;
     title: Schema.Attribute.String;
@@ -698,6 +699,7 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
     };
   };
   attributes: {
+    banners: Schema.Attribute.Relation<'manyToMany', 'api::banner.banner'>;
     collection: Schema.Attribute.Relation<
       'manyToOne',
       'api::collection.collection'

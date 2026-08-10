@@ -219,6 +219,12 @@
       "relation": "manyToMany",
       "target": "api::promo-code.promo-code",
       "inversedBy": "applicable_products"
+    },
+    "banners": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::banner.banner",
+      "mappedBy": "products"
     }
   }
 }
