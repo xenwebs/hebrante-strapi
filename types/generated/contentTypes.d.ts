@@ -703,7 +703,19 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
     };
   };
   attributes: {
+    banner_order: Schema.Attribute.Integer &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     banners: Schema.Attribute.Relation<'manyToMany', 'api::banner.banner'>;
+    catalog_order: Schema.Attribute.Integer &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     collection: Schema.Attribute.Relation<
       'manyToOne',
       'api::collection.collection'
