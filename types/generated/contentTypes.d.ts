@@ -482,6 +482,9 @@ export interface ApiBannerBanner extends Struct.CollectionTypeSchema {
       'oneToOne',
       'api::collection.collection'
     >;
+    content: Schema.Attribute.Component<'banner.slot', false> &
+      Schema.Attribute.Required;
+    content_2: Schema.Attribute.Component<'banner.slot', false>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -498,6 +501,7 @@ export interface ApiBannerBanner extends Struct.CollectionTypeSchema {
     products: Schema.Attribute.Relation<'manyToMany', 'api::product.product'>;
     publishedAt: Schema.Attribute.DateTime;
     slug: Schema.Attribute.String;
+    split: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &

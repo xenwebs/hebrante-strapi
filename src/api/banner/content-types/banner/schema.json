@@ -58,6 +58,21 @@
       "relation": "manyToMany",
       "target": "api::product.product",
       "inversedBy": "banners"
+    },
+    "split": {
+      "type": "boolean",
+      "default": false
+    },
+    "content": {
+      "type": "component",
+      "component": "banner.slot",
+      "repeatable": false,
+      "required": true
+    },
+    "content_2": {
+      "type": "component",
+      "component": "banner.slot",
+      "repeatable": false
     }
   }
 }
