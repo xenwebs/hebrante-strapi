@@ -1,0 +1,72 @@
+{
+  "collectionName": "components_banner_slots",
+  "info": {
+    "displayName": "slot",
+    "icon": "dashboard"
+  },
+  "options": {},
+  "attributes": {
+    "eyebrow": {
+      "type": "string"
+    },
+    "eyebrow_en": {
+      "type": "string"
+    },
+    "heading": {
+      "type": "string"
+    },
+    "heading_en": {
+      "type": "string"
+    },
+    "subheading": {
+      "type": "string"
+    },
+    "subheading_en": {
+      "type": "string"
+    },
+    "light_text": {
+      "type": "boolean",
+      "default": false
+    },
+    "button_text": {
+      "type": "string"
+    },
+    "button_text_en": {
+      "type": "string"
+    },
+    "button_bg_color": {
+      "type": "string"
+    },
+    "button_text_color": {
+      "type": "string"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "image_mobile": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "collection": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::collection.collection"
+    },
+    "products": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::product.product"
+    }
+  },
+  "config": {}
+}
