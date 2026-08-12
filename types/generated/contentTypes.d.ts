@@ -478,19 +478,12 @@ export interface ApiBannerBanner extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    collection: Schema.Attribute.Relation<
-      'oneToOne',
-      'api::collection.collection'
-    >;
     content: Schema.Attribute.Component<'banner.slot', false> &
       Schema.Attribute.Required;
     content_2: Schema.Attribute.Component<'banner.slot', false>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    image_mobile: Schema.Attribute.Media<'images' | 'files'>;
-    image2x: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -498,11 +491,9 @@ export interface ApiBannerBanner extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     order: Schema.Attribute.Integer;
-    products: Schema.Attribute.Relation<'manyToMany', 'api::product.product'>;
     publishedAt: Schema.Attribute.DateTime;
     slug: Schema.Attribute.String;
     split: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
-    title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -709,7 +700,6 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
           localized: true;
         };
       }>;
-    banners: Schema.Attribute.Relation<'manyToMany', 'api::banner.banner'>;
     catalog_order: Schema.Attribute.Integer &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
