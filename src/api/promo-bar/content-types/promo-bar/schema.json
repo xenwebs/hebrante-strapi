@@ -32,6 +32,24 @@
     "is_active": {
       "type": "boolean",
       "default": true
+    },
+    "text_2": {
+      "type": "string"
+    },
+    "text_2_en": {
+      "type": "string"
+    },
+    "text_3": {
+      "type": "string"
+    },
+    "text_3_en": {
+      "type": "string"
+    },
+    "text_4": {
+      "type": "string"
+    },
+    "text_4_en": {
+      "type": "string"
     }
   }
 }

@@ -909,6 +909,12 @@ export interface ApiPromoBarPromoBar extends Struct.CollectionTypeSchema {
       >;
     publishedAt: Schema.Attribute.DateTime;
     text: Schema.Attribute.String & Schema.Attribute.Required;
+    text_2: Schema.Attribute.String;
+    text_2_en: Schema.Attribute.String;
+    text_3: Schema.Attribute.String;
+    text_3_en: Schema.Attribute.String;
+    text_4: Schema.Attribute.String;
+    text_4_en: Schema.Attribute.String;
     text_en: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
