@@ -88,10 +88,10 @@
     },
     "shippingStatus": {
       "type": "enumeration",
-      "default": "pending",
+      "default": "awaiting_shipment",
       "enum": [
-        "pending",
-        "shipped"
+        "awaiting_shipment",
+        "label_created"
       ]
     }
   }
