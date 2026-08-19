@@ -85,6 +85,14 @@
     },
     "shippingCarrier": {
       "type": "string"
+    },
+    "shippingStatus": {
+      "type": "enumeration",
+      "default": "pending",
+      "enum": [
+        "pending",
+        "shipped"
+      ]
     }
   }
 }

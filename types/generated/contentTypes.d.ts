@@ -667,6 +667,8 @@ export interface ApiOrderOrder extends Struct.CollectionTypeSchema {
     shippingCarrier: Schema.Attribute.String;
     shippingCost: Schema.Attribute.Integer;
     shippingMethod: Schema.Attribute.String;
+    shippingStatus: Schema.Attribute.Enumeration<['pending', 'shipped']> &
+      Schema.Attribute.DefaultTo<'pending'>;
     state: Schema.Attribute.String;
     street: Schema.Attribute.String;
     subtotal: Schema.Attribute.Integer;
