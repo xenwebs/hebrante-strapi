@@ -56,6 +56,14 @@
         "videos",
         "audios"
       ]
+    },
+    "banner_mobile": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
     }
   }
 }

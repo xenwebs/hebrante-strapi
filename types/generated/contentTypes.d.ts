@@ -513,6 +513,7 @@ export interface ApiCollectionCollection extends Struct.CollectionTypeSchema {
   };
   attributes: {
     banner: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    banner_mobile: Schema.Attribute.Media<'images' | 'files'>;
     banner2x: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     cover: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     createdAt: Schema.Attribute.DateTime;
