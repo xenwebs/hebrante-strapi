@@ -723,6 +723,8 @@ export interface ApiPopupSuscripcionPopupSuscripcion
     subtitulo_en: Schema.Attribute.Text;
     texto_boton: Schema.Attribute.String;
     texto_boton_en: Schema.Attribute.String;
+    texto_checkbox: Schema.Attribute.String;
+    texto_checkbox_en: Schema.Attribute.String;
     texto_legal: Schema.Attribute.Blocks;
     texto_legal_en: Schema.Attribute.Blocks;
     titulo: Schema.Attribute.String;

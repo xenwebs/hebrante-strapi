@@ -42,6 +42,12 @@
     "texto_boton_en": {
       "type": "string"
     },
+    "texto_checkbox": {
+      "type": "string"
+    },
+    "texto_checkbox_en": {
+      "type": "string"
+    },
     "texto_legal": {
       "type": "blocks"
     },
