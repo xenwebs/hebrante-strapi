@@ -1,0 +1,45 @@
+{
+  "kind": "collectionType",
+  "collectionName": "suscriptors",
+  "info": {
+    "singularName": "suscriptor",
+    "pluralName": "suscriptors",
+    "displayName": "suscriptor"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "email": {
+      "type": "email",
+      "required": true,
+      "unique": true
+    },
+    "nombre": {
+      "type": "string"
+    },
+    "telefono": {
+      "type": "string"
+    },
+    "cumple_dia": {
+      "type": "integer"
+    },
+    "cumple_mes": {
+      "type": "integer"
+    },
+    "idioma": {
+      "type": "enumeration",
+      "enum": [
+        "es",
+        "en"
+      ]
+    },
+    "consentimiento": {
+      "type": "boolean"
+    },
+    "fuente": {
+      "type": "string"
+    }
+  }
+}

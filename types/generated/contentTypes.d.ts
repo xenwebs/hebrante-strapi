@@ -1058,6 +1058,43 @@ export interface ApiShippingPolicyShippingPolicy
   };
 }
 
+export interface ApiSuscriptorSuscriptor extends Struct.CollectionTypeSchema {
+  collectionName: 'suscriptors';
+  info: {
+    displayName: 'suscriptor';
+    pluralName: 'suscriptors';
+    singularName: 'suscriptor';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    consentimiento: Schema.Attribute.Boolean;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    cumple_dia: Schema.Attribute.Integer;
+    cumple_mes: Schema.Attribute.Integer;
+    email: Schema.Attribute.Email &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique;
+    fuente: Schema.Attribute.String;
+    idioma: Schema.Attribute.Enumeration<['es', 'en']>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::suscriptor.suscriptor'
+    > &
+      Schema.Attribute.Private;
+    nombre: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    telefono: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiVariantVariant extends Struct.CollectionTypeSchema {
   collectionName: 'variants';
   info: {
@@ -1642,6 +1679,7 @@ declare module '@strapi/strapi' {
       'api::promo-bar.promo-bar': ApiPromoBarPromoBar;
       'api::promo-code.promo-code': ApiPromoCodePromoCode;
       'api::shipping-policy.shipping-policy': ApiShippingPolicyShippingPolicy;
+      'api::suscriptor.suscriptor': ApiSuscriptorSuscriptor;
       'api::variant.variant': ApiVariantVariant;
       'api::workshop-page.workshop-page': ApiWorkshopPageWorkshopPage;
       'plugin::content-releases.release': PluginContentReleasesRelease;
