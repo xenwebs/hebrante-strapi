@@ -1,0 +1,87 @@
+{
+  "kind": "collectionType",
+  "collectionName": "popup_suscripcions",
+  "info": {
+    "singularName": "popup-suscripcion",
+    "pluralName": "popup-suscripcions",
+    "displayName": "popup-suscripcion"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "activo": {
+      "type": "boolean",
+      "default": true
+    },
+    "titulo": {
+      "type": "string"
+    },
+    "titulo_en": {
+      "type": "string"
+    },
+    "subtitulo": {
+      "type": "text"
+    },
+    "subtitulo_en": {
+      "type": "text"
+    },
+    "descuento_texto": {
+      "type": "string"
+    },
+    "nota": {
+      "type": "string"
+    },
+    "nota_en": {
+      "type": "string"
+    },
+    "texto_boton": {
+      "type": "string"
+    },
+    "texto_boton_en": {
+      "type": "string"
+    },
+    "texto_legal": {
+      "type": "blocks"
+    },
+    "texto_legal_en": {
+      "type": "blocks"
+    },
+    "imagen": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "imagen_movil": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "delay_segundos": {
+      "type": "integer",
+      "default": 25
+    },
+    "scroll_porcentaje": {
+      "type": "integer",
+      "default": 45
+    },
+    "dias_reaparicion": {
+      "type": "integer",
+      "default": 30
+    },
+    "exit_intent": {
+      "type": "boolean"
+    }
+  }
+}

@@ -684,6 +684,55 @@ export interface ApiOrderOrder extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiPopupSuscripcionPopupSuscripcion
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'popup_suscripcions';
+  info: {
+    displayName: 'popup-suscripcion';
+    pluralName: 'popup-suscripcions';
+    singularName: 'popup-suscripcion';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    activo: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<true>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    delay_segundos: Schema.Attribute.Integer & Schema.Attribute.DefaultTo<25>;
+    descuento_texto: Schema.Attribute.String;
+    dias_reaparicion: Schema.Attribute.Integer & Schema.Attribute.DefaultTo<30>;
+    exit_intent: Schema.Attribute.Boolean;
+    imagen: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    imagen_movil: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::popup-suscripcion.popup-suscripcion'
+    > &
+      Schema.Attribute.Private;
+    nota: Schema.Attribute.String;
+    nota_en: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    scroll_porcentaje: Schema.Attribute.Integer &
+      Schema.Attribute.DefaultTo<45>;
+    subtitulo: Schema.Attribute.Text;
+    subtitulo_en: Schema.Attribute.Text;
+    texto_boton: Schema.Attribute.String;
+    texto_boton_en: Schema.Attribute.String;
+    texto_legal: Schema.Attribute.Blocks;
+    texto_legal_en: Schema.Attribute.Blocks;
+    titulo: Schema.Attribute.String;
+    titulo_en: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiProductProduct extends Struct.CollectionTypeSchema {
   collectionName: 'products';
   info: {
@@ -1588,6 +1637,7 @@ declare module '@strapi/strapi' {
       'api::history-page.history-page': ApiHistoryPageHistoryPage;
       'api::newsletter.newsletter': ApiNewsletterNewsletter;
       'api::order.order': ApiOrderOrder;
+      'api::popup-suscripcion.popup-suscripcion': ApiPopupSuscripcionPopupSuscripcion;
       'api::product.product': ApiProductProduct;
       'api::promo-bar.promo-bar': ApiPromoBarPromoBar;
       'api::promo-code.promo-code': ApiPromoCodePromoCode;
