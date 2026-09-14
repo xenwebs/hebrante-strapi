@@ -1097,6 +1097,38 @@ export interface ApiSuscriptorSuscriptor extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiTiendaPageTiendaPage extends Struct.CollectionTypeSchema {
+  collectionName: 'tienda_pages';
+  info: {
+    displayName: 'tienda-page';
+    pluralName: 'tienda-pages';
+    singularName: 'tienda-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    city: Schema.Attribute.String;
+    city_en: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    info: Schema.Attribute.Text;
+    info_en: Schema.Attribute.Text;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::tienda-page.tienda-page'
+    > &
+      Schema.Attribute.Private;
+    photo: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiVariantVariant extends Struct.CollectionTypeSchema {
   collectionName: 'variants';
   info: {
@@ -1682,6 +1714,7 @@ declare module '@strapi/strapi' {
       'api::promo-code.promo-code': ApiPromoCodePromoCode;
       'api::shipping-policy.shipping-policy': ApiShippingPolicyShippingPolicy;
       'api::suscriptor.suscriptor': ApiSuscriptorSuscriptor;
+      'api::tienda-page.tienda-page': ApiTiendaPageTiendaPage;
       'api::variant.variant': ApiVariantVariant;
       'api::workshop-page.workshop-page': ApiWorkshopPageWorkshopPage;
       'plugin::content-releases.release': PluginContentReleasesRelease;

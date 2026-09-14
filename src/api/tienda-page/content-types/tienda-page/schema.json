@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tienda_pages",
+  "info": {
+    "singularName": "tienda-page",
+    "pluralName": "tienda-pages",
+    "displayName": "tienda-page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "info": {
+      "type": "text"
+    },
+    "info_en": {
+      "type": "text"
+    },
+    "city": {
+      "type": "string"
+    },
+    "city_en": {
+      "type": "string"
+    },
+    "photo": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  }
+}
