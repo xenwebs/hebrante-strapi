@@ -66,6 +66,15 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::product.product"
+    },
+    "content_align": {
+      "type": "enumeration",
+      "default": "left",
+      "enum": [
+        "left",
+        "center",
+        "right"
+      ]
     }
   },
   "config": {}

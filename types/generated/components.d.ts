@@ -15,6 +15,8 @@ export interface BannerSlot extends Struct.ComponentSchema {
       'oneToOne',
       'api::collection.collection'
     >;
+    content_align: Schema.Attribute.Enumeration<['left', 'center', 'right']> &
+      Schema.Attribute.DefaultTo<'left'>;
     eyebrow: Schema.Attribute.String;
     eyebrow_en: Schema.Attribute.String;
     heading: Schema.Attribute.String;
