@@ -28,6 +28,10 @@ export interface BannerSlot extends Struct.ComponentSchema {
     products: Schema.Attribute.Relation<'oneToMany', 'api::product.product'>;
     subheading: Schema.Attribute.String;
     subheading_en: Schema.Attribute.String;
+    video: Schema.Attribute.Media<'videos'>;
+    video_mobile: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
   };
 }
 
