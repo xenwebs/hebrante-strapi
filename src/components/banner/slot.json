@@ -92,6 +92,9 @@
         "videos",
         "audios"
       ]
+    },
+    "countdown_until": {
+      "type": "datetime"
     }
   },
   "config": {}

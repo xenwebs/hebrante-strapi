@@ -17,6 +17,7 @@ export interface BannerSlot extends Struct.ComponentSchema {
     >;
     content_align: Schema.Attribute.Enumeration<['left', 'center', 'right']> &
       Schema.Attribute.DefaultTo<'left'>;
+    countdown_until: Schema.Attribute.DateTime;
     eyebrow: Schema.Attribute.String;
     eyebrow_en: Schema.Attribute.String;
     heading: Schema.Attribute.String;
