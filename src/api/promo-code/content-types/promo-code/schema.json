@@ -44,6 +44,10 @@
       "relation": "manyToMany",
       "target": "api::product.product",
       "mappedBy": "promo_codes"
+    },
+    "max_uses": {
+      "type": "integer",
+      "min": 1
     }
   }
 }

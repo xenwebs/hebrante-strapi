@@ -1018,6 +1018,13 @@ export interface ApiPromoCodePromoCode extends Struct.CollectionTypeSchema {
       'api::promo-code.promo-code'
     > &
       Schema.Attribute.Private;
+    max_uses: Schema.Attribute.Integer &
+      Schema.Attribute.SetMinMax<
+        {
+          min: 1;
+        },
+        number
+      >;
     min_purchase_amount: Schema.Attribute.Integer;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
