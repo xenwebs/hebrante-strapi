@@ -50,7 +50,7 @@ export interface SizeSizeChartItem extends Struct.ComponentSchema {
 }
 
 declare module '@strapi/strapi' {
-  export module Public {
+  export namespace Public {
     export interface ComponentSchemas {
       'banner.slot': BannerSlot;
       'size.size-chart-item': SizeSizeChartItem;
